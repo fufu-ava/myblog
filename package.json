@@ -1,0 +1,11 @@
+{
+  "name": "my-blog",
+  "version": "1.0.0",
+  "description": "个人博客网站",
+  "scripts": {
+    "start": "http-server -a 0.0.0.0 -p 3000"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+} 

@@ -1,0 +1,454 @@
+.summary {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, #f8f9fa, #fff);
+    min-height: 100vh;
+}
+
+.summary h1 {
+    text-align: center;
+    margin-bottom: 4rem;
+    background: -webkit-linear-gradient(45deg, #007bff, #00d2ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+/* 时间轴垂直线 */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: #007bff;
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,123,255,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,123,255,0.1);
+    display: flex;
+    gap: 2rem;
+}
+
+/* 时间轴圆点 */
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 4px solid #007bff;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-content {
+    flex: 1;
+    width: 45%;
+    padding: 0 2rem;
+    position: relative;
+}
+
+/* 交替布局 */
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: auto;
+    text-align: left;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-right: auto;
+    text-align: right;
+}
+
+.timeline-date {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.timeline-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-5px);
+}
+
+.timeline-card h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.timeline-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.timeline-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.timeline-tags span {
+    background: #e9ecef;
+    padding: 0.2rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-dot {
+        left: 30px;
+        transform: none;
+    }
+
+    .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px !important;
+        text-align: left !important;
+        padding: 0 1rem;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+    }
+
+    .timeline-image {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 1rem;
+    }
+} 
+
+/* 时间线容器 */
+.visual-timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* 年份区块 */
+.year-section {
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.year-label {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgba(0,123,255,0.15);
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.year-label small {
+    font-size: 1rem;
+    color: #666;
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+/* 时间线项目 */
+.timeline-items {
+    margin-left: 2rem;
+    border-left: 2px solid rgba(0,123,255,0.15);
+    padding-left: 3rem;
+    position: relative;
+}
+
+.timeline-items::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #007bff;
+    opacity: 0.2;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,123,255,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,123,255,0.1);
+}
+
+.timeline-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 25px rgba(0,123,255,0.15);
+    border-color: rgba(0,123,255,0.2);
+}
+
+/* 时间线图标 */
+.timeline-icon {
+    position: absolute;
+    left: -4rem;
+    width: 2rem;
+    height: 2rem;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 4px rgba(0,123,255,0.1);
+}
+
+.timeline-icon i {
+    color: #007bff;
+}
+
+/* 不同类型的时间线项目 */
+.timeline-item.education .timeline-icon {
+    background: rgba(0,123,255,0.1);
+}
+
+.timeline-item.project .timeline-icon {
+    background: rgba(75,192,192,0.1);
+}
+
+.timeline-item.project .timeline-icon i {
+    color: #4bc0c0;
+}
+
+.timeline-item.internship .timeline-icon {
+    background: rgba(255,159,64,0.1);
+}
+
+.timeline-item.internship .timeline-icon i {
+    color: #ff9f40;
+}
+
+/* 内容样式 */
+.timeline-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.timeline-content .time {
+    color: #007bff;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+
+/* 成就标签 */
+.achievement-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.achievement-tags span {
+    padding: 0.3rem 0.8rem;
+    background: rgba(0,123,255,0.1);
+    border-radius: 15px;
+    font-size: 0.85rem;
+    color: #007bff;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .visual-timeline {
+        padding: 1rem;
+    }
+    
+    .timeline-items {
+        margin-left: 1rem;
+        padding-left: 2rem;
+    }
+    
+    .timeline-icon {
+        left: -3rem;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    
+    .year-label {
+        font-size: 2rem;
+    }
+} 
+
+.timeline-image {
+    flex-shrink: 0;
+    width: 200px;
+    height: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.timeline-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-image img {
+    transform: scale(1.05);
+}
+
+.timeline-content {
+    flex: 1;
+} 
+
+.summary-section {
+    padding: 6rem 5% 2rem;
+}
+
+.timeline-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #007bff;
+}
+
+.timeline-section {
+    margin-bottom: 3rem;
+}
+
+.timeline-section > h3 {
+    color: #007bff;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -5px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #007bff;
+    border: 2px solid #fff;
+}
+
+.timeline-date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.timeline-content h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.timeline-content p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-item {
+        padding-left: 3rem;
+    }
+
+    .timeline-dot {
+        left: 10px;
+    }
+
+    .timeline-section > h3 {
+        padding-left: 3rem;
+    }
+} 
+
+.timeline-type {
+    color: #007bff;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    padding: 0.2rem 0.6rem;
+    background: rgba(0,123,255,0.1);
+    border-radius: 4px;
+    display: inline-block;
+} 
+
+.activity-section {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0,123,255,0.1);
+}
+
+.activity-section p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.activity-section .timeline-type {
+    margin-bottom: 1rem;
+    background: rgba(75,192,192,0.1);
+    color: #4bc0c0;
+} 

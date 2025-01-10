@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 确保适当的渲染和触摸缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>我的个人网站</title>
+    <!-- Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- CSS 文件引入 -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header>
+        <div class="logo">
+            <!-- Logo -->
+            <h1>MY BLOG</h1>
+        </div>
+        <button class="menu-toggle" aria-label="菜单">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+            <!-- 导航菜单 -->
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="index.html#about">关于我</a></li>
+                <li><a href="education.html">教育经历</a></li>
+                <li><a href="projects.html">项目经历</a></li>
+                <li><a href="internship.html">实习经历</a></li>
+                <li><a href="summary.html">人生历程</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <!-- 搜索框 -->
+            <form class="search-form" id="search-form" name="search-form">
+                <input type="search" 
+                       placeholder="搜索..." 
+                       aria-label="搜索"
+                       id="search-input"
+                       name="search-query">
+                <button type="submit" id="search-submit">
+                    <span>搜索</span>
+                </button>
+            </form>
+        </div>
+    </header>
+
+    <div class="search-results" id="search-results">
+        <div class="search-results-container">
+            <h3>搜索结果</h3>
+            <div class="results-list"></div>
+            <button class="close-search">关闭</button>
+        </div>
+    </div>
+
+    <!-- 主要内容区域 -->
+    <main>
+        <!-- 个人简介区域 -->
+        <section class="about" id="about">
+            <h2>关于我</h2>
+            <div class="about-content">
+                <div class="about-flex">
+                    <img src="./image/头像.jpg" alt="个人头像">
+                    <div class="about-text">
+                        <div class="about-info">
+                            <h3>胡睿琦</h3>
+                            <p class="about-tags">
+                                <span>24岁</span>
+                                <span>女</span>
+                                <span>理学硕士</span>
+                                <span>英国留学</span>
+                                <span>INTJ</span>
+                                <span>AI产品经理进阶ing</span>
+                            </p>
+                            <div class="contact-info">
+                                <p><i class="fas fa-phone"></i> 15567489573（微信同号）</p>
+                                <p><i class="fas fa-envelope"></i> xiaofu00@hotmail.com</p>
+                            </div>
+                            <div class="job-preference">
+                                <p><i class="fas fa-map-marker-alt"></i> 期望城市：上海</p>
+                                <p><i class="fas fa-yen-sign"></i> 期望薪资：20-24K</p>
+                                <p><i class="fas fa-bullseye"></i> 目标职位：AI产品经理</p>
+                            </div>
+                        </div>
+                        <p>热爱产品设计，擅长用户研究，对AI领域充满热情。希望能够将AI技术与产品设计相结合，
+                        创造更好的用户体验。</p>
+                        <div class="skills-section">
+                            <h4>专业技能</h4>
+                            <div class="skill-categories">
+                                <div class="skill-row">
+                                    <div class="skill-category">
+                                        <i class="fas fa-desktop"></i>
+                                        <h5>办公软件</h5>
+                                        <ul>
+                                            <li>熟练使用 Office 办公软件（Word、Excel、PPT）</li>
+                                            <li>熟悉Xmind 思维导图流程</li>
+                                            <li>熟悉墨刀，Canva设计流程</li>
+                                            <li>掌握飞书协同文档</li>
+                                        </ul>
+                                    </div>
+                                    <div class="skill-category">
+                                        <i class="fas fa-language"></i>
+                                        <h5>语言能力</h5>
+                                        <ul>
+                                            <li>普通话（母语水平）</li>
+                                            <li>英语（雅思 7 分）</li>
+                                            <li>良好的跨文化交际能力</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="skill-row">
+                                    <div class="skill-category">
+                                        <i class="fas fa-robot"></i>
+                                        <h5>技术与AI</h5>
+                                        <ul>
+                                            <li>了解 AI 基础知识与大模型基本原理</li>
+                                            <li>掌握产品需求分析方法</li>
+                                            <li>熟悉 Python 数据处理</li>
+                                            <li>熟悉 Tableau 数据可视化</li>
+                                            <li>熟练使用 Bloomberg 终端</li>
+                                        </ul>
+                                    </div>
+                                    <div class="skill-category">
+                                        <i class="fas fa-user-check"></i>
+                                        <h5>个人特质</h5>
+                                        <ul>
+                                            <li>工作认真负责，态度严谨</li>
+                                            <li>学习能力强，善于总结复盘</li>
+                                            <li>善于团队协作</li>
+                                            <li>有较强的抗压能力</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 三栏内容区域 -->
+        <section class="content-columns">
+            <!-- 教育经历 -->
+            <div class="column">
+                <h2>教育经历</h2>
+                <div class="column-content">
+                    <!-- 爱丁堡大学 -->
+                    <article class="content-card">
+                        <h3>爱丁堡大学（英国）</h3>
+                        <p class="time">2023.09 - 2024.11</p>
+                        <p>专业：未来治理</p>
+                        <p>学位：理科硕士（Merit）</p>
+                        <a href="education.html" class="read-more">阅读更多</a>
+                    </article>
+                    
+                    <!-- 朴次茅斯大学 -->
+                    <article class="content-card">
+                        <h3>朴次茅斯大学（英国）</h3>
+                        <p class="time">2021.09 - 2022.06</p>
+                        <p>专业：金融与商务沟通</p>
+                        <p>学位：本科一等学位（First-class）</p>
+                        <a href="education.html" class="read-more">阅读更多</a>
+                    </article>
+                    
+                    <!-- 中央财经大学 -->
+                    <article class="content-card">
+                        <h3>中央财经大学</h3>
+                        <p class="time">2018.09 - 2021.06</p>
+                        <p>专业：金融理财服务</p>
+                        <p>项目：SQA 3+1</p>
+                        <a href="education.html" class="read-more">阅读更多</a>
+                    </article>
+                </div>
+            </div>
+            
+            <!-- 项目经历 -->
+            <div class="column">
+                <h2>项目经历</h2>
+                <div class="column-content">
+                    <article class="content-card">
+                        <h3>模拟LGBTQ+社交产品需求文档（PRD）</h3>
+                        <p class="time">2024.11 - 2024.12</p>
+                        <p>• 独立完成LGBTQ+社交产品的需求分析与规划文档</p>
+                        <p>• 设计用户场景与功能模块</p>
+                        <p>• 制定产品迭代路线图</p>
+                        <p>• 使用coze辅助完成AI产品设计</p>
+                        <a href="projects.html" class="read-more">阅读更多</a>
+                    </article>
+
+                    <article class="content-card">
+                        <h3>基于 Cursor 的个人博客开发</h3>
+                        <p class="time">2024.12 - 2025.01</p>
+                        <p>• 使用 Cursor AI 辅助开发响应式个人博客</p>
+                        <p>• 实现多功能集成：教育经历、项目展示、历程等</p>
+                        <p>• 优化用户体验，提升开发效率</p>
+                        <a href="projects.html" class="read-more">阅读更多</a>
+                    </article>
+                </div>
+            </div>
+            
+            <!-- 实习经历 -->
+            <div class="column">
+                <h2>实习经历</h2>
+                <div class="column-content">
+                    <article class="content-card">
+                        <h3>被色阁非遗美学生活馆</h3>
+                        <p class="time">2023.01 - 2023.02</p>
+                        <p>职位：非遗文创实习生</p>
+                        <p>• 参与非遗数字化项目，整理传统工艺素材</p>
+                        <p>• 开展用户调研，设计现代化展示方案</p>
+                        <a href="internship.html" class="read-more">阅读更多</a>
+                    </article>
+                   
+                    <article class="content-card">
+                        <h3>Aloha 冲浪店</h3>
+                        <p class="time">2022.11 - 2022.12</p>
+                        <p>职位：运营实习生</p>
+                        <p>• 负责课程销售数据分析与推荐优化</p>
+                        <p>• 设计个性化课程方案，提升转化率</p>
+                        <a href="internship.html" class="read-more">阅读更多</a>
+                    </article>
+                   
+                    <article class="content-card">
+                        <h3>Spoon World Buffet&Bar</h3>
+                        <p class="time">2021.12 - 2022.02</p>
+                        <p>职位：前台服务实习生</p>
+                        <p>• 管理线上预订系统，优化服务流程</p>
+                        <p>• 提供中英双语客户服务与反馈收集</p>
+                        <a href="internship.html" class="read-more">阅读更多</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚区域 -->
+    <footer>
+        <div class="social-links">
+            <a href="#" title="微博"><i class="fab fa-weibo"></i></a>
+            <a href="#" title="微信"><i class="fab fa-weixin"></i></a>
+            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="copyright">
+            <p>© 2025 我的个人博客. All rights reserved.</p>
+            <p>联系方式：xiaofu00@hotmail.com</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript 文件引入 -->
+    <script src="./js/main.js"></script>
